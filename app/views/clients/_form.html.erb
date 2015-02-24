@@ -1,0 +1,20 @@
+
+<% if !@client.errors.empty? %>
+	<ol>
+		<% @client.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+	<% end %>
+	</ol>
+<% end %>
+
+<%= form_for @client do |f| %>
+	<%=f.text_field :name %>
+	<%=f.text_field :email %>
+	<!-- Persisted significa que ya esta guardado en la base de datos -->
+	<% unless @client.persisted? %>
+	<%=f.password_field :password %>	
+	<% end  %>
+	
+	<%=f.submit%>
+
+	<% end %>

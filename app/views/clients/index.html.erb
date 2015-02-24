@@ -1,0 +1,26 @@
+<h1>Clients#index</h1>
+
+<h2>
+<%=	notice %>
+</h2>
+<table class="table table-hover">
+	<tr>
+		<th>Nombre del usuario</th>
+		<th>Email</th>
+
+	</tr>
+
+	<% @clients.each do |client| %>
+	<tr>
+		<td><%= client.name%></td>
+		<td><%= client.email%></td>
+		<td><%= link_to 'Ver detalle', url_for(controller: :clients, action: :show, id: client.id) %>
+		<%= link_to 'Editar Cliente', edit_client_path(client) %>
+		<%= link_to 'Eliminar', client, method: :delete, data: {confirm: 'Deseas Eliminar el Usuario'} %>
+	</td>
+
+	</tr>
+	<% end %>    
+</table>
+
+<p>Find me in app/views/clients/index.html.erb</p>

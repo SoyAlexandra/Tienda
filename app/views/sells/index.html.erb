@@ -1,0 +1,18 @@
+<h1>Sells#index</h1>
+<table class="table table-striped">
+	<tr>
+		<th> Id Venta </th>
+		<th> Total </th>
+	</tr>
+
+	<% @sells.each do |sell| %>
+	<tr>
+		<td><%= sell.id%></td>
+		<td><%= sell.total%></td>
+		<td><%= link_to 'Ver detalle', url_for(controller: :sells, action: :show, id: sell.id) %></td>
+	</tr>
+
+	<% end %>
+
+</table>
+<p>Find me in app/views/sells/index.html.erb</p>

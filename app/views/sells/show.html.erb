@@ -1,0 +1,21 @@
+<h1>Detalle de la Venta</h1>
+<h2>Venta No.</h2> <%=@sell.id %>
+<h2>Fecha</h2> <%=@sell.created_at %>
+<br>
+<h2>Datos del Cliente</h2>
+<h2>Nombre del Cliente</h2><%=@sell.client.name%>
+<h2>Email del Cliente</h2><%=@sell.client.email%>
+
+<br>
+<h2>Total</h2> <%=@sell.total %>
+<br>
+<!-- 
+<%@sell.line_items.each do |line_item| %>
+<tr>
+	<td><%= line_item.product_id%></td>
+
+</tr>
+
+<% end %> -->
+
+<%= link_to 'Volver al listado', sells_index_path %>
